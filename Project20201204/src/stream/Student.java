@@ -24,11 +24,17 @@ public class Student implements Comparable<Student> {
 		return "Student [name=" + name + ", score=" + score + "]";
 	}
 
+	
+	//CollectorExample와 연결
+	
 	@Override
 	public int compareTo(Student o) {
 		//오름차순: 음수, 내림차순: 양수
 		//	return this.score - o.score; //오름차순
 	return o.score - this.score; //내림차순
 	}
+
+	
+	
 
 }

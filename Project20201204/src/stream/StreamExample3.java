@@ -32,7 +32,7 @@ public class StreamExample3 {
 
 			@Override
 			public String apply(String t) {
-				return t.toUpperCase();
+				return t.toUpperCase(); 
 			}
 			
 		}).forEach(s -> System.out.println(s));

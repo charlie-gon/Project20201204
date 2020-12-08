@@ -19,7 +19,7 @@ public class StreamExample {
 	public static void main(String[] args) {
 		
 		//stream은 컬렉션이나 배열로부터 생성됨
-		
+		 
 		List<String>list = null;
 		list = Arrays.asList("Hong","Hwang","Park","Choi", "Kim");
 		

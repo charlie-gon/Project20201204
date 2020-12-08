@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
 import java.util.stream.Stream;
-
+ 
 public class StreamExample4 {
 	public static void main(String[] args) {
 

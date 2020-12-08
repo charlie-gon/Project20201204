@@ -20,11 +20,13 @@ public class CollectorExample {
 
 		// Collect 사용
 		// 오름차순 정렬
-		List<Student> student80s = list.stream().filter(s -> s.getScore() / 10 == 8).sorted() // stream 정렬 메소드. 사용하기 위해
-																								// Student 클래스에
-																								// Comparable 인터페이스 작성 및
-																								// compareTo 메소드 재정의 필요
+		List<Student> student80s = list.stream()
+				.filter(s -> s.getScore() / 10 == 8)
+				.sorted() // stream 정렬 메소드. 사용하기 위해
 				.collect(Collectors.toList());
+				// Student 클래스에																			
+				// Comparable 인터페이스 작성 및
+				// compareTo 메소드 재정의 필요
 
 		for (Student student : student80s) {
 			System.out.println(student.getName() + " " + student.getScore());

@@ -16,7 +16,7 @@ public class StreamExample2 {
 		// 짝수만 결과 출력
 		IntStream is = IntStream.rangeClosed(1, 100);
 		is.filter(t -> t % 2 == 0).forEach(t -> System.out.print(t));
-		System.out.println();
+		System.out.println(); 
 
 		// 홀수만 결과 출력
 		is = IntStream.rangeClosed(1, 100);

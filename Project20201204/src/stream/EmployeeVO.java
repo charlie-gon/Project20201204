@@ -3,7 +3,7 @@
 
 package stream;
 
-public class EmployeeVO { //최상위 클래스
+public class EmployeeVO implements Comparable<EmployeeVO> { //최상위 클래스
 	//field
 		private int employeeId;
 		private String firstName;
@@ -73,7 +73,7 @@ public class EmployeeVO { //최상위 클래스
 			return phoneNum;
 		}
 		public void setPhoneNum(String phoneNum) {
-			this.phoneNum = phoneNum;
+			this.phoneNum = phoneNum; 
 		}
 		public String getHireDate() {
 			return hireDate;
@@ -108,4 +108,13 @@ public class EmployeeVO { //최상위 클래스
 		+ this.email + "샐러리: " + this.salary + "부서번호: " + this.deptId);
 			
 		}
+
+		@Override
+		public int compareTo(EmployeeVO o) {
+//			return this.salary - o.salary; //샐러리 정렬(음수: 오름차순)
+			return this.lastName.compareTo(o.lastName); 
+			
+		}
+		
+		
 }

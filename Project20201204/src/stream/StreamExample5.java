@@ -15,6 +15,7 @@ import java.util.OptionalDouble;
 import java.util.function.DoubleConsumer;
 import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamExample5 {
@@ -26,7 +27,7 @@ public class StreamExample5 {
 			String sql = "select * from emp3"; // 쿼리문 String 타입 sql 변수에 담기
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
+			while (rs.next()) { 
 				EmployeeVO emp = new EmployeeVO();
 				emp.setEmployeeId(rs.getInt("employee_id")); // 쿼리문으로 불러온 값을 가져오겠다
 				emp.setFirstName(rs.getString("first_name"));
@@ -65,7 +66,22 @@ public class StreamExample5 {
 //				System.out.println("급여평균: " + avg.getAsDouble());
 //				
 //			}
-//		}); 
+//		});
+		
+		//sorted 활용하여 salary 높은-낮은 순서대로 내림차순 정렬
+		System.out.println("급여 높은 사원(내림차순)");
+		list.stream()
+		.sorted()
+		.forEach(s -> System.out.println("이름: " + s.getFirstName() + " " + "급여: " + s.getSalary()));
+		
+		//이름 순서대로 정렬(내림차순)
+		System.out.println("이름 순서(알파벳 순서)");
+		
+		list.stream()
+		.sorted()
+		.forEach(s -> System.out.println(s.getLastName()));
+
+		
 
 	}
 
