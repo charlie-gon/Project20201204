@@ -45,7 +45,7 @@ public class Exam06 {
 		//데이터 값을 제대로 가져오지 못함
 		System.out.println("개발자 직무 평균급여");
 		OptionalDouble avg = list.stream()
-				.filter(t -> t.getJob() == "IT_PROG")
+				.filter(t -> t.getJob().equals("IT_PROG")) //String 타입이므로 equals로 비교
 				.mapToInt(new ToIntFunction<Employee>() {
 
 			@Override
@@ -54,16 +54,16 @@ public class Exam06 {
 			}
 		}).average();
 
-		System.out.println("평균급여: " + avg.orElse(0.0));
+		System.out.println("평균급여: " + avg.getAsDouble());
 
-		avg.ifPresent(new DoubleConsumer() {
-
-			@Override
-			public void accept(double value) {
-				System.out.println("평균급여: " + avg.getAsDouble());
-			}
-		});
-
+//		avg.ifPresent(new DoubleConsumer() {
+//
+//			@Override
+//			public void accept(double value) {
+//				System.out.println("평균급여: " + avg.getAsDouble());
+//			}
+//		});
+		
 	}
 
 }
